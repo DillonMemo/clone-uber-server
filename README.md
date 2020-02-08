@@ -44,6 +44,21 @@ nomad academy의 우버 강의를 보고 기록한 저장소 입니다.
 
 ---
 
+**npm install**
+
+1. `npm i typescript ts-node nodemon cors dotenv helmet morgan bcrypt`
+2. `npm i -D @types/node @types/cors @types/helmet @types/morgan babel-runtime tslint-config-prettier`
+
+   **using GraphQL**
+
+   1. `npm i graphql-tools graphql-yoga merge-graphql-schemas`
+   2. `npm i -D gql-merge graphql-to-typescript`
+
+   **using TypeORM and DB**
+
+   1. `npm i typeorm class-validator`
+   2. `npm i mysql` && `npm i pg` 쓰고자 하는 db 설치
+
 **미들웨어(middleware)**
 
 > 앱의 연결이나 요청들을 다루는 방식을 수정
@@ -79,3 +94,10 @@ nomad academy의 우버 강의를 보고 기록한 저장소 입니다.
 - npm bcrypt 설치시 오류 발생 할 경우 node 버전을 확인 하고 Current버전 이라면 삭제 후 LTS 버전으로 재설치. > 이후에도 오류가 발생 하면 powerShell 관리자 권한으로 실행 한 후 `npm i -g windows-build-tools` 실행 후 `npm i bcrypt` 설치
 
   - 윈도우에서 필수인 c, c++ 관련된 것들과 파이썬같은 것을 설치해서 다른 언어를 사용하는 라이브러리르 지원할 수 있게 해주는데, bcrypt는 속도 때문에 c++인가 내부적으로 쓰는 것으로 알고 있음.
+  - 아래와 같은 bcrypt 관련 오류가 나올 때 `rm -rf node_modules` > `npm install`
+
+  ````
+  Error: dlopen(/Volumes/Samsung_T5/workspace/clone/uber/server/node_modules/bcrypt/lib/binding/bcrypt_lib.node, 1): no suitable image found.  Did find:
+        /Volumes/Samsung_T5/workspace/clone/uber/server/node_modules/bcrypt/lib/binding/bcrypt_lib.node: unknown file type, first eight bytes: 0x4D 0x5A 0x90 0x00 0x03 0x00 0x00 0x00
+        /Volumes/Samsung_T5/workspace/clone/uber/server/node_modules/bcrypt/lib/binding/bcrypt_lib.node: unknown file type, first eight bytes: 0x4D 0x5A 0x90 0x00 0x03 0x00 0x00 0x00```
+  ````

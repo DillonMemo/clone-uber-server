@@ -1,0 +1,49 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Practice the server project in uber",
+  "main": "index.js",
+  "scripts": {
+    "predev": "npm run types",
+    "dev": "cd src && nodemon --exec ts-node index.ts -e ts,graphql",
+    "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
+    "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graphql.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DillonMemo/clone-uber-server.git"
+  },
+  "keywords": [],
+  "author": "dillon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DillonMemo/clone-uber-server/issues"
+  },
+  "homepage": "https://github.com/DillonMemo/clone-uber-server#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "class-validator": "^0.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "graphql-tools": "^4.0.6",
+    "graphql-yoga": "^1.18.3",
+    "helmet": "^3.21.2",
+    "merge-graphql-schemas": "^1.7.6",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "pg": "^7.18.1",
+    "ts-node": "^8.6.2",
+    "typeorm": "^0.2.22",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/helmet": "0.0.45",
+    "@types/morgan": "^1.7.37",
+    "@types/node": "^13.7.0",
+    "babel-runtime": "^6.26.0",
+    "gql-merge": "0.0.6",
+    "graphql-to-typescript": "^0.1.2",
+    "tslint-config-prettier": "^1.18.0"
+  }
+}
