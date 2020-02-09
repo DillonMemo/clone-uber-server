@@ -1,4 +1,4 @@
-import { SayHelloQueryArgs, SayHelloResponse } from "../../types/graphql";
+import { SayHelloQueryArgs, SayHelloResponse } from '../../../types/graphql';
 
 /**
  * @param {parent} - 1
@@ -16,10 +16,10 @@ const resolvers = {
     sayHello: (_, args: SayHelloQueryArgs): SayHelloResponse => {
       return {
         error: false,
-        text: `Hello ${args.name}`
+        text: `Hello ${args.name}`,
       };
-    }
-  }
+    },
+  },
 };
 
 export default resolvers;

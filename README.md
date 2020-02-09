@@ -28,11 +28,11 @@ nomad academy의 우버 강의를 보고 기록한 저장소 입니다.
 - [ ] Update place
 - [ ] Delete place
 - [ ] See nearby drivers
-- [ ] Subscribe to nearby drivers
+- [ ] Subscribe to nearby drivers | 운전자가 요청을 받으면 다른 요청은 받지 않게 하기
 - [ ] Request a Ride
 - [ ] Get nearby rides
-- [ ] Subscribe to nearby ride requests
-- [ ] Subscribe to ride status
+- [ ] Subscribe to nearby ride requests | 한번 요청한 Ride는 요청 하지 못함.
+- [ ] Subscribe to ride status | Ride 상태 확인하기
 - [ ] Get chat room messages
 - [ ] Subscribe to chat room messages
 - [ ] Send a chat message

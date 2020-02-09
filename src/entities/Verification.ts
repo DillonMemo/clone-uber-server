@@ -1,9 +1,10 @@
 import {
-  Entity,
   BaseEntity,
-  PrimaryGeneratedColumn,
+  BeforeInsert,
   Column,
   CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { verificationTarget } from '../types/types';
@@ -33,6 +34,20 @@ class Verification extends BaseEntity {
 
   @UpdateDateColumn()
   updatedAt: string;
+
+  @BeforeInsert()
+  createKey(): void {
+    if (this.target === PHONE) {
+      /// .floor - 내림차순
+      this.key = Math.floor(Math.random() * 100000).toString();
+    } else if (this.target === EMAIL) {
+      /// .tostring(36) - 숫자가 들어와도 text로 반환
+      /// ex) Math.random().toString(36) = "0.qthnohhe1cs"
+      this.key = Math.random()
+        .toString(36)
+        .substr(2);
+    }
+  }
 }
 
 export default Verification;

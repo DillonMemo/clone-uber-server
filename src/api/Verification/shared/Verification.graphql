@@ -5,5 +5,13 @@ type Verification {
   key: String!
   verified: Boolean!
   createdAt: String!
-  updatedAt: String!
+  updatedAt: String
 }
+
+# Example
+# v = Verification
+# v.target = 'phone'
+# v.payload = +821055496100
+# v.key = 3456
+
+# result => 'hello verift with the number 3456'
