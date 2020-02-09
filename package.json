@@ -33,6 +33,7 @@
     "nodemon": "^2.0.2",
     "pg": "^7.18.1",
     "ts-node": "^8.6.2",
+    "twilio": "^3.39.4",
     "typeorm": "^0.2.22",
     "typescript": "^3.7.5"
   },
@@ -41,6 +42,7 @@
     "@types/helmet": "0.0.45",
     "@types/morgan": "^1.7.37",
     "@types/node": "^13.7.0",
+    "@types/twilio": "^2.11.0",
     "babel-runtime": "^6.26.0",
     "gql-merge": "0.0.6",
     "graphql-to-typescript": "^0.1.2",

@@ -54,14 +54,34 @@ type Ride {
   updatedAt: String
 }
 
-type FacebookConnectResponse {
+type CompletePhoneVerificationResponse {
   ok: Boolean!
   error: String
   token: String
 }
 
 type Mutation {
-  FacebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse!
+  CompletePhoneVerification(phoneNumber: String!, key: String!): CompletePhoneVerificationResponse!
+  EmailSignIn(email: String!, password: String!): EmailSignInResponse!
+  FacebookConnect(
+    firstName: String!
+    lastName: String!
+    email: String
+    fbId: String!
+  ): FacebookConnectResponse!
+  StartPhoneVerification(phoneNumber: String!): StartPhoneVerificationResponse!
+}
+
+type EmailSignInResponse {
+  ok: Boolean!
+  error: String
+  token: String
+}
+
+type FacebookConnectResponse {
+  ok: Boolean!
+  error: String
+  token: String
 }
 
 type User {
@@ -89,6 +109,11 @@ type User {
   ridesAsDriver: [Ride]
   createdAt: String!
   UpdatedAt: String
+}
+
+type StartPhoneVerificationResponse {
+  ok: Boolean!
+  error: String
 }
 
 type Verification {
