@@ -1,6 +1,7 @@
 import { Resolvers } from 'src/types/resolvers';
 import User from '../../../entities/User';
 import { FacebookConnectMutationArgs, FacebookConnectResponse } from 'src/types/graphql';
+import createJWT from '../../../utils/createJWT';
 
 const resolvers: Resolvers = {
   Mutation: {
@@ -14,10 +15,11 @@ const resolvers: Resolvers = {
         const existingUser = await User.findOne({ fbId });
         console.log('existingUser', existingUser);
         if (existingUser) {
+          const token = createJWT(existingUser.id);
           return {
             ok: true,
             error: null,
-            token: 'Comming soon, already',
+            token,
           };
         }
       } catch (error) {
@@ -30,15 +32,17 @@ const resolvers: Resolvers = {
 
       // facebook ID가 없다면 유저 생성
       try {
-        await User.create({
+        const newUser = await User.create({
           ...args,
           profilePhoto: `http://graph.facebook.com/${fbId}/picture?type=square`,
         }).save();
 
+        const token = createJWT(newUser.id);
+
         return {
           ok: true,
           error: null,
-          token: 'Comming soon, created',
+          token,
         };
       } catch (error) {
         return {

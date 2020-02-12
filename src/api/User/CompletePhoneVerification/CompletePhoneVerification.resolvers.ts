@@ -5,6 +5,7 @@ import {
 } from '../../../types/graphql';
 import Verification from '../../../entities/Verification';
 import User from '../../../entities/User';
+import createJWT from '../../../utils/createJWT';
 
 /**
  * @since 2020.02.09
@@ -52,10 +53,12 @@ const resolvers: Resolvers = {
           user.verifiedPhoneNumber = true;
           user.save();
 
+          const token = createJWT(user.id);
+
           return {
             ok: true,
             error: null,
-            token: 'Coming Soon',
+            token,
           };
         } else {
           // 번호는 Verification 했지만 유저가 존재 하지 않으니 프로필을 업데이트 하도록 유도

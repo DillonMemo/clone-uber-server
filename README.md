@@ -10,11 +10,11 @@ nomad academy의 우버 강의를 보고 기록한 저장소 입니다.
 - [x] Sing In with Email
 - [x] Start phone number verification
 - [x] Complete phone number verification
-- [ ] Sign Up with Email
+- [x] Sign Up with Email
 
 ### Authentication:
 
-- [ ] Generate JWT(JSON Web Token)
+- [x] Generate JWT(JSON Web Token)
 - [ ] Verify JWT(JSON Web Token)
 
 ### Private Resolvers:
