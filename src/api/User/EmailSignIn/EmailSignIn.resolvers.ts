@@ -33,7 +33,7 @@ const resolvers: Resolvers = {
         } else {
           return {
             ok: false,
-            error: 'Wrong password\n' + user,
+            error: 'Wrong password\n' + JSON.stringify(user),
             token: null,
           };
         }

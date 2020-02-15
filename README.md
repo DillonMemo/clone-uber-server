@@ -15,7 +15,7 @@ nomad academy의 우버 강의를 보고 기록한 저장소 입니다.
 ### Authentication:
 
 - [x] Generate JWT(JSON Web Token)
-- [ ] Verify JWT(JSON Web Token)
+- [x] Verify JWT(JSON Web Token)
 - [x] Testing JWT
 
 ### Private Resolvers:
