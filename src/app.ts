@@ -15,7 +15,6 @@ class App {
       context: req => ({
         student: '장동원',
         req: req.request,
-        user: (req.request as any).user,
       }),
     });
     this.middlewares();

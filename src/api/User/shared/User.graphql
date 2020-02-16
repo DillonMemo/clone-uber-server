@@ -24,7 +24,3 @@ type User {
   createdAt: String!
   UpdatedAt: String
 }
-
-type Query {
-  user: User
-}

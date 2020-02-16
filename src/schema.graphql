@@ -23,7 +23,6 @@ type SayHelloResponse {
 type Query {
   sayHello(name: String!): SayHelloResponse!
   GetMyProfile: GetMyProfileResponse!
-  user: User
 }
 
 type Place {
