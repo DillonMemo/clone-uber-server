@@ -14,7 +14,12 @@ const sendEmail = (to: string, subject: string, html: string) => {
     html,
   };
 
-  return mailGunClient.messages().send(emailData);
+  console.log('emailData', emailData);
+  console.log(mailGunClient);
+  return mailGunClient.messages().send(emailData, (error, body) => {
+    console.log('error', error);
+    console.log('api key: ', process.env.MAILGUN_API_KEY, 'body :', body);
+  });
 };
 
 export const sendVerificationEmail = (fullName: string, key: string) => {

@@ -20,7 +20,7 @@ nomad academy의 우버 강의를 보고 기록한 저장소 입니다.
 
 ### Private Resolvers:
 
-- [ ] Verify Email
+- [ ] Request email verification
 - [x] Get my profile
 - [ ] Update my profile
 - [ ] Toggle driving mode

@@ -1,8 +1,9 @@
 import User from '../../../entities/User';
+import Verification from '../../../entities/Verification';
 import { EmailSignUpMutationArgs, EmailSignUpResponse } from 'src/types/graphql';
 import { Resolvers } from 'src/types/resolvers';
 import createJWT from '../../../utils/createJWT';
-import Verification from '../../../entities/Verification';
+import { sendVerificationEmail } from '../../../utils/sendEmail';
 
 const resolvers: Resolvers = {
   Mutation: {
@@ -19,6 +20,7 @@ const resolvers: Resolvers = {
             token: null,
           };
         } else {
+          // 핸드폰 유효 체크
           const phoneVerification = await Verification.findOne({
             payload: args.phoneNumber,
             verified: true,
@@ -33,7 +35,10 @@ const resolvers: Resolvers = {
               const emailVerification = await Verification.create({
                 payload: newUser.email,
                 target: 'EMAIL',
-              });
+              }).save();
+
+              console.log(newUser.fullName, emailVerification.key);
+              await sendVerificationEmail(newUser.fullName, emailVerification.key);
             }
 
             const token = createJWT(newUser.id);
