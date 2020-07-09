@@ -20,14 +20,16 @@ nomad academy의 우버 강의를 보고 기록한 저장소 입니다.
 
 ### Private Resolvers:
 
-- [ ] Request email verification
 - [x] Get my profile
-- [ ] Update my profile
-- [ ] Toggle driving mode
-- [ ] Report location / orientation
-- [ ] Add place
-- [ ] Update place
-- [ ] Delete place
+- [x] Request email verification
+- [x] Complete Email verification
+- [x] Update my profile
+- [x] Toggle driving mode
+- [x] Report location / orientation
+- [x] Add place
+- [x] Edit place
+- [x] Delete place
+- [x] Get My Places
 - [ ] See nearby drivers
 - [ ] Subscribe to nearby drivers | 운전자가 요청을 받으면 다른 요청은 받지 않게 하기
 - [ ] Request a Ride

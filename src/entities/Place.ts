@@ -5,7 +5,9 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
+  ManyToOne,
 } from 'typeorm';
+import User from './User';
 
 @Entity()
 class Place extends BaseEntity {
@@ -26,6 +28,13 @@ class Place extends BaseEntity {
 
   @Column({ type: 'boolean', default: false })
   isFav: boolean;
+
+  /** 아래 ManyToOne의 user에 대한 userId를 자동으로 가져옵니다. */
+  @Column({ nullable: true })
+  userId: number;
+
+  @ManyToOne((type) => User, (user) => user.places)
+  user: User;
 
   @CreateDateColumn()
   createdAt: string;
